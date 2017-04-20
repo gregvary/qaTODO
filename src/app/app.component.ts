@@ -6,7 +6,6 @@ import { Component } from '@angular/core';
     <h1>{{title}}</h1>
     <nav>
       <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
-      <a routerLink="/detail" routerLinkActive="active">Detail</a>
       <a href="../MonkeytestJS/index.html">test</a>
     </nav>
     <router-outlet></router-outlet>
