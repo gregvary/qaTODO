@@ -1,20 +1,19 @@
-/**
- * Created by greg on 19.04.17.
- */
 import { Component } from '@angular/core';
+
 @Component({
   selector: 'my-app',
   template: `
     <h1>{{title}}</h1>
     <nav>
       <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
-      <a routerLink="/heroes" routerLinkActive="active">Heroes</a>
+      <a routerLink="/detail" routerLinkActive="active">Detail</a>
       <a href="../MonkeytestJS/index.html">test</a>
     </nav>
     <router-outlet></router-outlet>
   `,
   styleUrls: ['./app.component.css'],
 })
+
 export class AppComponent {
-  title = 'Tour of Heroes';
+  title = 'Simple Todo';
 }

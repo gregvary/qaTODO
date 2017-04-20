@@ -1,8 +1,26 @@
-<h3>Top Heroes</h3>
-<div class="grid grid-pad">
-  <a *ngFor="let hero of heroes"  [routerLink]="['/detail', hero.id]"  class="col-1-4">
-    <div class="module hero">
-      <h4>{{hero.name}}</h4>
+<div class="list-overview-card mdl-card mdl-shadow--2dp" *ngFor="let list of lists">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">{{list.name}}</h2>
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+    <a class="mdl-button mdl-button--colored mdl-js-button mdl-button--raised" [routerLink]="['/detail', list.id]">
+      Go to List
+    </a>
+  </div>
+</div>
+
+<div class="list-overview-card mdl-card mdl-shadow--2dp">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Create new list</h2>
+  </div>
+  <div class="mdl-card__supporting-text">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <input class="mdl-textfield__input" type="text" placeholder="List name" [(ngModel)]="listName">
     </div>
-  </a>
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+    <a class="mdl-button mdl-button--colored mdl-js-button mdl-button--raised" (click)="createNewList()">
+      Create!
+    </a>
+  </div>
 </div>

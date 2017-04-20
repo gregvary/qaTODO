@@ -1,8 +1,8 @@
-.list-overview-card.mdl-card {
+.list-detail-card.mdl-card {
   width: 512px;
   margin: 50px auto;
 }
-.list-overview-card > .mdl-card__title {
+.list-detail-card > .mdl-card__title {
   color: #fff;
   height: 176px;
   background-color: #0d3349;

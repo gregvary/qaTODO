@@ -1,10 +1,6 @@
-/**
- * Created by greg on 19.04.17.
- */
 import { Component, OnInit } from '@angular/core';
-
-import { Hero } from './hero';
-import { HeroService } from './hero.service';
+import { ListsService } from './lists.service';
+import {TodoList} from "./todo-list";
 
 @Component({
   selector: 'my-dashboard',
@@ -13,12 +9,17 @@ import { HeroService } from './hero.service';
 })
 export class DashboardComponent implements OnInit {
 
-  heroes: Hero[] = [];
+  lists: TodoList[] = [];
+  listName: string = '';
 
-  constructor(private heroService: HeroService) { }
+  constructor(private listService: ListsService) { }
 
   ngOnInit(): void {
-    this.heroService.getHeroesAsync()
-      .then(heroes => this.heroes = heroes.slice(1, 5));
+    this.listService.getListsAsync()
+      .then(lists => this.lists = lists);
+  }
+
+  createNewList(): void {
+    this.listService.createList(this.listName);
   }
 }
